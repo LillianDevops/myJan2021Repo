@@ -11,17 +11,13 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: 'fb6229e3-d5aa-4a90-938c-c19459bfa526'
 
- - task: AzureRmWebAppDeployment@4
-   inputs:
-     ConnectionType: 'AzureRM'
-     azureSubscription: 'Newsub(c8d98445-6370-48e3-b148-7a946c485098)'
-     appType: 'webAppLinux'
-     WebAppName: 'azvmapp'
-     deployToSlotOrASE: true
-     ResourceGroupName: 'grp1'
-     SlotName: 'production'
-     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+  # Web app name
+  webAppName: 'azvmapp'
 
+  # Environment name
+  environmentName: 'azvmapp'
+
+ 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
